@@ -3,6 +3,11 @@
 Lê lançamentos do ERP, valida e gera o arquivo no layout que o sistema contábil importa.
 **Sem IA no caminho crítico — de propósito.**
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/fluxo-erp-dark.png">
+  <img src="./assets/fluxo-erp-light.png" alt="Fluxo: o ERP exporta os lançamentos, o de-para atribui a conta e a validação confere se débito é igual a crédito e se toda linha tem conta. Se fecha, gera o arquivo idempotente e o sistema contábil importa. Se não fecha, o processo para e aponta a linha — nada é gerado." width="100%">
+</picture>
+
 > Reimplementação pública de uma integração que mantenho em produção. Dados, schema e regras aqui são sintéticos.
 
 ## O problema
@@ -12,7 +17,7 @@ Toda competência, alguém monta a capa do fechamento numa planilha e redigita l
 ## Rodando
 
 ```bash
-python3 main.py                                                    # dataset com erros propositais
+python3 main.py   # dataset com erros propositais
 python3 main.py dados/lancamentos_corrigido.csv dados/de_para_completo.csv   # caminho feliz
 ```
 
